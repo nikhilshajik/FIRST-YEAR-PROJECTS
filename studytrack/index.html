@@ -1,23 +1,50 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>StudyTrack - Study Planner</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTrack - Study Planner</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
         <h1>StudyTrack 📚</h1>
-        <p>Plan your studies and stay productive.</p>
+        <p class="subtitle">Plan your studies and stay productive.</p>
 
-        <div class="task-input">
-            <input type="text" id="taskInput" placeholder="Enter a task">
-            <button onclick="addTask()">Add Task</button>
+        <div class="task-form">
+            <label for="taskInput">Task</label>
+            <input type="text" id="taskInput" placeholder="What do you need to study?">
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="taskDate">Due date</label>
+                    <input type="date" id="taskDate">
+                </div>
+
+                <div class="form-field">
+                    <label for="taskPriority">Priority</label>
+                    <select id="taskPriority">
+                        <option value="Low">Low</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="add-button" onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="list-heading">
+            <h2>Your Tasks</h2>
+            <span id="taskCount">0 tasks</span>
         </div>
 
         <ul id="taskList"></ul>
+        <p id="emptyMessage" class="empty-message">
+            No tasks yet. Add your first study task above!
+        </p>
     </div>
 
     <script src="script.js"></script>
