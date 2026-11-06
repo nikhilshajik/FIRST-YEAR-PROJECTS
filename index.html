@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyTrack | Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">StudyTrack<span>.</span></a>
+    <span class="tag">A simple student planner</span>
+  </header>
+  <main class="container">
+    <section class="intro">
+      <div><p class="eyebrow">PLAN YOUR DAY</p><h1>Make time for what matters.</h1>
+      <p class="muted">Keep your assignments and study goals in one place.</p></div>
+      <div class="date-card"><span>TODAY</span><strong id="today"></strong></div>
+    </section>
+    <section class="stats">
+      <article class="stat"><span>Total tasks</span><strong id="totalCount">0</strong></article>
+      <article class="stat"><span>Completed</span><strong id="doneCount">0</strong></article>
+      <article class="stat"><span>Remaining</span><strong id="leftCount">0</strong></article>
+    </section>
+    <section class="panel">
+      <div class="section-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h2>My tasks</h2></div>
+      <select id="filter"><option value="all">All tasks</option><option value="pending">Pending</option><option value="done">Completed</option></select></div>
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" type="text" placeholder="What do you need to study?" required maxlength="90">
+        <select id="priority"><option value="Normal">Normal</option><option value="High">High priority</option><option value="Low">Low priority</option></select>
+        <input id="dueDate" type="date" aria-label="Due date">
+        <button type="submit">Add task +</button>
+      </form>
+      <div id="taskList" class="task-list"></div>
+      <p id="emptyMessage" class="empty">No tasks here yet. Add one to get started.</p>
+    </section>
+    <p class="footer">StudyTrack · Built as a beginner JavaScript project</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
